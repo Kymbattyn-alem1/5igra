@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Дело № 07 — Тайна пропавших заглавных букв</title>
+<style>
+:root{--ink:#18283a;--paper:#fff8e9;--gold:#f2bd59;--red:#d96859;--teal:#69b9ad;--muted:#9aa8b2}
+*{box-sizing:border-box}body{margin:0;background:#101c2b;color:var(--ink);font-family:Georgia,"Trebuchet MS",serif}
+.top{padding:15px 5vw;background:#17283a;color:#fff;display:flex;justify-content:space-between;gap:12px;align-items:center;border-bottom:3px solid var(--gold);flex-wrap:wrap}
+.stamp{border:2px solid #e6b75d;color:#ffd47b;padding:7px 12px;transform:rotate(-3deg);font:bold 12px Arial;letter-spacing:2px}
+main{max-width:1000px;margin:25px auto;padding:0 14px 45px}
+.paper{background:var(--paper);border-radius:8px;padding:clamp(18px,4vw,36px);box-shadow:0 15px 50px #0008;position:relative;overflow:hidden}
+.paper:before{content:"";position:absolute;inset:0;opacity:.13;pointer-events:none;background:repeating-linear-gradient(0deg,transparent 0 31px,#b9a98b 32px)}
+.paper>*{position:relative}
+.kicker{font:900 11px Arial;letter-spacing:3px;color:#a46b35}
+h1{font-size:clamp(27px,5vw,44px);line-height:1.05;margin:12px 0;color:#1e3045}
+h2{font-size:clamp(22px,4vw,30px);margin:10px 0;color:#1e3045}
+p{line-height:1.55}
+.intro{font-size:17px;max-width:720px;color:#56616b}
+.casefile{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:20px 0}
+.filetag{background:#f5e7c9;border-left:5px solid var(--red);padding:10px 14px;font: bold 13px Arial}
+.progress{height:10px;background:#e7ddca;border-radius:20px;overflow:hidden;margin:15px 0}.progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--red),var(--gold),var(--teal));transition:.3s}
+.stats{display:flex;gap:10px;flex-wrap:wrap;font:bold 13px Arial}.stats span{background:#e9dfca;padding:8px 12px;border-radius:20px}
+.scene{display:none}.scene.active{display:block;animation:appear .35s ease}@keyframes appear{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.board{background:#20364a;color:#fff;border-radius:12px;padding:18px;margin:18px 0;box-shadow:inset 0 0 0 2px #52697c}
+.board small{color:#f3ca77;font: bold 11px Arial;letter-spacing:2px}
+.clues{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:15px 0}
+.clue{background:#fffaf0;color:#233448;border:2px dashed #c8a76b;padding:13px;border-radius:8px;text-align:center;font-weight:bold;min-height:75px}
+.clue b{display:block;font-size:23px;margin-bottom:5px}
+.btn{border:0;padding:12px 18px;border-radius:7px;background:#20364a;color:#fff;font-weight:bold;font-size:15px;cursor:pointer;margin:5px;box-shadow:0 4px 0 #101c2b}
+.btn.gold{background:#d89a38;color:#17283a}.btn.red{background:#c75e50}.btn:disabled{opacity:.45;cursor:not-allowed}
+.options{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;margin:18px 0}
+.option{background:#fff;border:2px solid #ddcfb5;border-radius:9px;padding:14px;text-align:left;font-size:16px;cursor:pointer;color:#24364a}
+.option:hover{border-color:#d89a38;transform:translateY(-2px)}.option:disabled{cursor:default;transform:none}
+.feedback{display:none;margin:14px 0;padding:13px 15px;border-radius:8px;font:bold 15px Arial}.feedback.show{display:block}.ok{background:#dcefe4;color:#285c49}.no{background:#f8e1d9;color:#8c3e34}
+.evidence{display:flex;gap:10px;flex-wrap:wrap;margin:15px 0}
+.evidence span{background:#fff;border:1px solid #d7c7a7;padding:9px 12px;border-radius:5px;box-shadow:2px 3px 0 #d7c7a7;font-weight:bold}
+.blank{display:inline-block;min-width:110px;border-bottom:2px solid #b77b37;padding:2px 6px;color:#b77b37;font-weight:bold}
+input{padding:12px;border:2px solid #cbb991;border-radius:7px;font-size:18px;width:min(100%,340px);background:#fff}
+.ending{text-align:center}.medal{font-size:65px}.score{font-size:48px;color:#bd7c2c;font-weight:bold}
+.footer{color:#c3cbd1;text-align:center;font:12px Arial;padding:20px}
+@media(max-width:520px){.top{padding:12px}.options{grid-template-columns:1fr}.paper{padding:18px}}
+</style></head>
+<body>
+<div class="top"><div><b>АРХИВ ЛИНГВИСТИЧЕСКОГО ДЕТЕКТИВА</b><div style="font:11px Arial;color:#c8d2dc;margin-top:4px">ОТДЕЛ РАССЛЕДОВАНИЯ РЕЧЕВЫХ ПРЕСТУПЛЕНИЙ</div></div><div class="stamp">СЕКРЕТНО · 2026</div></div>
+<main><div class="paper">
+<section class="scene active" id="start">
+<div class="kicker">НЕОБЫЧНОЕ ДЕЛО · № 07</div><h1>Тайна пропавших<br>заглавных букв</h1>
+<p class="intro">В городе Словограде исчезли таблички с именами людей, улиц и рек. Из-за этого в архиве всё перепуталось: <b>Иван</b> стал похож на обычного <b>человека</b>, а <b>Иртыш</b> — на любую реку. Тебе предстоит стать детективом и восстановить порядок.</p>
+<div class="board"><small>ЗАДАНИЕ ШЕФА</small><h2 style="color:#fff">Найди улики и раскрой, какие существительные собственные, а какие — нарицательные.</h2><p style="color:#d6e0e8">За каждое верное решение получай улику. Собери 4 улики, чтобы открыть архив.</p></div>
+<div class="progress"><span id="progress"></span></div><div class="casefile"><div class="filetag">ДОСЬЕ: СОБСТВЕННЫЕ И НАРИЦАТЕЛЬНЫЕ</div><div class="filetag">УРОВЕНЬ: ЮНЫЙ СЫЩИК</div></div>
+<button class="btn gold" onclick="begin()">Открыть дело →</button>
+</section>
+
+<section class="scene" id="room1">
+<div class="kicker">МЕСТО ПРОИСШЕСТВИЯ · УЛИКА 1/4</div><h2>Комната опознания</h2>
+<p>На столе лежат карточки. Свидетель утверждает: одно слово называет конкретного человека, а другое — целую группу людей. Найди <b>собственное имя</b>.</p>
+<div class="clues"><div class="clue"><b>👦</b>Данияр</div><div class="clue"><b>👥</b>ученик</div><div class="clue"><b>🏙️</b>город</div></div>
+<div class="board"><small>ВОПРОС ДЕТЕКТИВА</small><h2 style="color:white">Какое слово является собственным именем?</h2></div>
+<div class="options"><button class="option" onclick="answer(1,0)">ученик</button><button class="option" onclick="answer(1,1)">Данияр</button><button class="option" onclick="answer(1,2)">город</button></div>
+<div class="feedback" id="f1"></div><button class="btn gold" id="n1" style="display:none" onclick="go('room2')">Забрать улику →</button>
+</section>
+
+<section class="scene" id="room2">
+<div class="kicker">АРХИВ ГОРОДА · УЛИКА 2/4</div><h2>Карта с исчезнувшими названиями</h2>
+<p>На карте остались три названия. Восстанови правильную запись: собственные имена людей, городов, рек и улиц пишутся с заглавной буквы.</p>
+<div class="board"><small>ФРАГМЕНТ ИЗ АРХИВА</small><h2 style="color:white">«Мы приехали в шымкент и увидели реку бадам».</h2></div>
+<p><b>Выбери предложение, в котором все собственные имена написаны верно.</b></p>
+<div class="options"><button class="option" onclick="answer(2,0)">Мы приехали в Шымкент и увидели реку Бадам.</button><button class="option" onclick="answer(2,1)">Мы приехали в шымкент и увидели реку Бадам.</button><button class="option" onclick="answer(2,2)">Мы приехали в Шымкент и увидели реку бадам.</button></div>
+<div class="feedback" id="f2"></div><button class="btn gold" id="n2" style="display:none" onclick="go('room3')">Забрать улику →</button>
+</section>
+
+<section class="scene" id="room3">
+<div class="kicker">КАБИНЕТ ЭКСПЕРТА · УЛИКА 3/4</div><h2>Допрос свидетеля</h2>
+<p>Свидетель оставил записку, но перепутал два вида существительных. Распредели улики по папкам.</p>
+<div class="evidence"><span>Астана</span><span>река</span><span>Айгүл</span><span>книга</span><span>Алатау</span><span>учитель</span></div>
+<div class="board"><small>ВЫБЕРИ ПАПКУ</small><h2 style="color:white">Какое слово — нарицательное?</h2></div>
+<div class="options"><button class="option" onclick="answer(3,0)">Астана</button><button class="option" onclick="answer(3,1)">река</button><button class="option" onclick="answer(3,2)">Айгүл</button></div>
+<div class="feedback" id="f3"></div><button class="btn gold" id="n3" style="display:none" onclick="go('room4')">Забрать улику →</button>
+</section>
+
+<section class="scene" id="room4">
+<div class="kicker">ФИНАЛЬНАЯ УЛИКА · 4/4</div><h2>Зашифрованное сообщение</h2>
+<p>Шеф нашёл последнее сообщение преступника. Вставь пропущенные слова и восстанови правило.</p>
+<div class="board"><small>СЕКРЕТНЫЙ КОД</small><h2 style="color:white">«Собственные имена называют конкретные предметы и пишутся с ___ буквы. Нарицательные называют предметы в целом».</h2></div>
+<div class="options"><button class="option" onclick="answer(4,0)">строчной</button><button class="option" onclick="answer(4,1)">заглавной</button><button class="option" onclick="answer(4,2)">любой</button></div>
+<div class="feedback" id="f4"></div><button class="btn gold" id="n4" style="display:none" onclick="finish()">Раскрыть дело 🗝️</button>
+</section>
+
+<section class="scene ending" id="end">
+<div class="medal">🕵️‍♀️🏅</div><div class="kicker">ДЕЛО ЗАКРЫТО</div><h1>Словоград спасён!</h1><div class="score" id="score">4/4</div><p id="resultText" class="intro" style="margin:10px auto">Ты восстановил все имена и вернул заглавные буквы на место.</p>
+<div class="board"><small>ГЛАВНОЕ ПРАВИЛО ДЕТЕКТИВА</small><h2 style="color:white">Собственные имена — индивидуальные названия: Данияр, Шымкент, Иртыш. Нарицательные — общие названия: мальчик, город, река.</h2></div>
+<button class="btn gold" onclick="location.reload()">Новое расследование ↻</button>
+</section>
+</div><div class="footer">АРХИВ СЛОВОГРАДА · КАЖДОЕ СЛОВО ОСТАВЛЯЕТ СЛЕД</div></main>
+<script>
+let points=0,done={};
+function begin(){go('room1')}
+function go(id){document.querySelectorAll('.scene').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');let n={room1:1,room2:2,room3:3,room4:4};let v=n[id]||0;document.getElementById('progress')?.style.setProperty('width',(v*25)+'%');window.scrollTo({top:0,behavior:'smooth'})}
+function answer(room,choice){if(done[room])return;let correct={1:1,2:0,3:1,4:1}[room],ok=choice===correct;done[room]=true;if(ok)points++;let fb=document.getElementById('f'+room);fb.className='feedback show '+(ok?'ok':'no');let texts={1:'Верно! «Данияр» — имя конкретного человека, поэтому это собственное имя.',2:'Именно так! Названия города Шымкент и реки Бадам пишутся с заглавной буквы.',3:'Верно! «Река» — общее название, значит, это нарицательное существительное.',4:'Расшифровано! Собственные имена пишутся с заглавной буквы.'};let wrong={1:'Подсказка: собственное имя указывает на конкретного человека, а не на любого ученика.',2:'Проверь оба названия: и город, и река имеют собственные имена.',3:'Подумай: Астана и Айгүл — индивидуальные названия, а «река» — общее слово.',4:'Вспомни, как в тексте пишутся имена людей и географические названия.'};fb.textContent=ok?texts[room]:wrong[room];document.getElementById('n'+room).style.display='inline-block';document.querySelectorAll('#room'+room+' .option').forEach(b=>b.disabled=true)}
+function finish(){go('end');document.getElementById('score').textContent=points+'/4';let t=points===4?'Безупречная работа! Ты настоящий мастер лингвистических расследований.':points>=2?'Хорошая работа! Ты собрал важные улики. Повтори правило и попробуй снова.':'Расследование было непростым. Перечитай правило и попробуй ещё раз — у тебя получится!';document.getElementById('resultText').textContent=t}
+</script>
+</body></html>
